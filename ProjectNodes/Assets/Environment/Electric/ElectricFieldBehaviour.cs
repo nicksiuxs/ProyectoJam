@@ -38,9 +38,15 @@ public class ElectricFieldBehaviour : MonoBehaviour
                 // {
                 addSourceElement(electricOther);
                 // }
-                electricObject.isOn = true;
+                StartCoroutine(updateObject());
             }
         }
+    }
+
+    IEnumerator updateObject()
+    {
+        yield return new WaitForSeconds(0.01f);
+        electricObject.isOn = true;
     }
 
     private void deactivateObject(Collider2D other)
