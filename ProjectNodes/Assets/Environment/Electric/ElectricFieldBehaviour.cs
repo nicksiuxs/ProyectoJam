@@ -21,6 +21,11 @@ public class ElectricFieldBehaviour : MonoBehaviour
         deactivateObject(other);
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        handleStay(other);
+    }
+
     public void addSourceElement(ElectricBehaviour electricBehaviour)
     {
         sourceElements.Add(electricBehaviour);
@@ -55,31 +60,19 @@ public class ElectricFieldBehaviour : MonoBehaviour
 
         if (other.gameObject.layer == layer)
         {
-            foreach (ElectricBehaviour element in sourceElementsTemporal)
+            sourceElementsTemporal.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
+
+            if (sourceElementsTemporal.Count == 0 && !electricObject.alwaysOn)
             {
-                Debug.Log((other.gameObject.transform.parent.GetComponent<ElectricBehaviour>().GetInstanceID() == element.GetInstanceID()) + " - " + other.gameObject.transform.parent.GetComponent<ElectricBehaviour>().GetInstanceID());
-                if (other.gameObject.transform.parent.GetComponent<ElectricBehaviour>().GetInstanceID() == element.GetInstanceID())
-                {
-                    Debug.Log(sourceElementsTemporal.Count + " ++");
-                    sourceElementsTemporal.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
-                    Debug.Log(sourceElementsTemporal.Count + " --");
-
-                    if (sourceElementsTemporal.Count == 0 && !electricObject.alwaysOn)
-                    {
-                        Debug.Log("---------------------");
-                        electricObject.isOn = false;
-                    }
-                }
+                electricObject.isOn = false;
             }
-            // if(sourceElements.Contains(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>()))
-            // {
-            // Debug.Log(sourceElements.Contains(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>()) + " --");
-            // sourceElements.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
-
-            // }
-
 
             this.sourceElements = sourceElementsTemporal;
         }
+    }
+
+    private void handleStay(Collider2D other)
+    {
+
     }
 }
