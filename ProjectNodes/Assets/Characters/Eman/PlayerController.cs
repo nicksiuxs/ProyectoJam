@@ -14,11 +14,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private bool isGrounded = false;
 
-    public void setIsGrounded(bool isGrounded)
-    {
-        this.isGrounded = isGrounded;
-    }
-
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -29,9 +24,10 @@ public class PlayerController : MonoBehaviour
         float inputMovement = Input.GetAxisRaw("Horizontal");
         horizontalMove = inputMovement * runSpeed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rigidBody.AddForce(new Vector2(0f, jumpForce));
+            
         }
     }
 
@@ -39,6 +35,12 @@ public class PlayerController : MonoBehaviour
     {
         move(horizontalMove * Time.fixedDeltaTime);
     }
+
+    public void setIsGrounded(bool isGrounded)
+    {
+        this.isGrounded = isGrounded;
+    }
+
     public void move(float move)
     {
         Vector3 targetVelocity = new Vector2(move * 10f, rigidBody.velocity.y);
