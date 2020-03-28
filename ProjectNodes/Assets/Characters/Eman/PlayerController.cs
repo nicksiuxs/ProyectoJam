@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     float horizontalMove = 0f;
     public float runSpeed = 40f;
 
+    public float jumpForce;
+    private bool isGrounded = false;
+
+    public void setIsGrounded(bool isGrounded)
+    {
+        this.isGrounded = isGrounded;
+    }
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -20,6 +28,11 @@ public class PlayerController : MonoBehaviour
     {
         float inputMovement = Input.GetAxisRaw("Horizontal");
         horizontalMove = inputMovement * runSpeed;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            rigidBody.AddForce(new Vector2(0f, jumpForce));
+        }
     }
 
     private void FixedUpdate()
