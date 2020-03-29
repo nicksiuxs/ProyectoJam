@@ -20,7 +20,7 @@ public class ElectricityController : MonoBehaviour
 
     void OnValidate()
     {
-        // setUp();
+        setUp();
     }
 
     // Update is called once per frame
@@ -32,6 +32,12 @@ public class ElectricityController : MonoBehaviour
 
     private void setUp()
     {
+        sourceList = new List<ElectricBehaviour>();
+        nodesList = new List<ElectricBehaviour>();
+        checkingList = new List<ElectricBehaviour>();
+        toCheckList = new List<ElectricBehaviour>();
+
+        sourceList.Clear();
         var electricElements = FindObjectsOfType<ElectricBehaviour>();
         foreach (ElectricBehaviour element in electricElements)
         {
