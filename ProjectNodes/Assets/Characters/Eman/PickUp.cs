@@ -31,8 +31,8 @@ public class PickUp : MonoBehaviour
                 itemRigidBody.isKinematic = false;
                 itemRigidBody.transform.parent = null;
                 beingCarried = false;
-                transform.position= playerRigidBody.transform.position;
-                //playerRigidBody.AddForce(playerRigidBody.transform.forward * throwForce);
+                transform.position = playerRigidBody.transform.position;
+                itemRigidBody.velocity = Vector2.zero;
             }
         }
         else
