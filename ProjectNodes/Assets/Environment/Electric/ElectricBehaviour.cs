@@ -8,7 +8,7 @@ public class ElectricBehaviour : MonoBehaviour
     public bool alwaysOn;
     public float electricFieldRange;
     public LayerMask electricLayer;
-    public CircleCollider2D collider;
+    public CircleCollider2D circleCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class ElectricBehaviour : MonoBehaviour
 
     public void setUp()
     {
-        collider.radius = electricFieldRange;
+        circleCollider.radius = electricFieldRange;
     }
 
     // Update is called once per frame
