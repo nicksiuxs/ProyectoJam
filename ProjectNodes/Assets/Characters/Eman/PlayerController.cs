@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(new Vector2(0f, jumpForce));
             
         }
+        Physics2D.IgnoreLayerCollision(0,8);
     }
 
     private void FixedUpdate()
