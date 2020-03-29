@@ -4,45 +4,38 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private Rigidbody2D itemRigidBody;
+    private Rigidbody2D rigidbodyOther;
     public Rigidbody2D playerRigidBody;
-
-    public float throwForce = 0;
-    bool hasPlayer = false;
-    bool beingCarried = false;
-
-    void OnTriggerEnter2D(Collider2D other)
+    public string tagObject;
+    private bool hasObject = false;
+    void OnTriggerStay2D(Collider2D other)
     {
-        itemRigidBody = other.GetComponent<Rigidbody2D>();
-        hasPlayer = true;
-    }
+        if (other.gameObject.tag == tagObject && !hasObject && Input.GetMouseButtonDown(0))
+        {
+            rigidbodyOther = other.GetComponent<Rigidbody2D>();
+            rigidbodyOther.isKinematic = true;
+            rigidbodyOther.transform.parent = playerRigidBody.transform;
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        hasPlayer = false;
+            StartCoroutine(updateState(true));
+        }
     }
 
     void Update()
     {
-        if (beingCarried)
+        if (hasObject && Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                itemRigidBody.isKinematic = false;
-                itemRigidBody.transform.parent = null;
-                beingCarried = false;
-                transform.position = playerRigidBody.transform.position;
-                itemRigidBody.velocity = Vector2.zero;
-            }
+            rigidbodyOther.isKinematic = false;
+            rigidbodyOther.transform.parent = null;
+            transform.position = playerRigidBody.transform.position;
+            rigidbodyOther.velocity = Vector2.zero;
+
+            StartCoroutine(updateState(false));
         }
-        else
-        {
-            if (Input.GetMouseButtonDown(0) && hasPlayer)
-            {
-                itemRigidBody.isKinematic = true;
-                itemRigidBody.transform.parent = playerRigidBody.transform;
-                beingCarried = true;
-            }
-        }
+    }
+
+    IEnumerator updateState(bool newState)
+    {
+        yield return new WaitForSeconds(.1f);
+        hasObject = newState;
     }
 }
