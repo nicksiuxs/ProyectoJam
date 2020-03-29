@@ -4,75 +4,128 @@ using UnityEngine;
 
 public class ElectricFieldBehaviour : MonoBehaviour
 {
-    public int layer;
-    public ElectricBehaviour electricObject;
+    // public int layer;
+    // public ElectricBehaviour electricObject;
 
-    public List<ElectricBehaviour> sourceElements = new List<ElectricBehaviour>();
+    // public List<ElectricBehaviour> sourceElements = new List<ElectricBehaviour>();
+    // public List<ElectricBehaviour> inactiveElements = new List<ElectricBehaviour>();
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        activateOther(other);
-        // Debug.Log(sourceElements.Count);
-        // Debug.Log(other);
-    }
+    // void Update()
+    // {
+    //     List<ElectricBehaviour> sourceElementsTemporal = new List<ElectricBehaviour>();
+    //     foreach (ElectricBehaviour element in sourceElements)
+    //     {
+    //         if (element.isOn)
+    //         {
+    //             sourceElementsTemporal.Add(element);
+    //         }
+    //     }
+    //     sourceElements = sourceElementsTemporal;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        deactivateObject(other);
-    }
+    //     // foreach (ElectricBehaviour element in inactiveElements)
+    //     // {
+    //     //     if (element.isOn)
+    //     //     {
+    //     //         sourceElements.Add(element);
+    //     //         inactiveElements.Remove(element);
+    //     //         electricObject.isOn = true;
+    //     //     }
+    //     // }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        handleStay(other);
-    }
+    //     if (sourceElements.Count == 0 && !electricObject.alwaysOn)
+    //     {
+    //         electricObject.isOn = false;
+    //     }
+    // }
 
-    public void addSourceElement(ElectricBehaviour electricBehaviour)
-    {
-        sourceElements.Add(electricBehaviour);
-    }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.layer == layer)
+    //     {
+    //         activateObject(other.gameObject);
+    //     }
+    // }
 
-    private void activateOther(Collider2D other)
-    {
-        if (other.gameObject.layer == layer)
-        {
-            ElectricBehaviour electricOther = other.gameObject.transform.parent.GetComponent<ElectricBehaviour>();
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     deactivateObject(other);
+    // }
 
-            if (electricOther.isOn)
-            {
-                // if(electricOther.isOn)
-                // {
-                addSourceElement(electricOther);
-                // }
-                StartCoroutine(updateObject());
-            }
-        }
-    }
+    // // void OnTriggerStay2D(Collider2D other)
+    // // {
+    // //     handleStay(other);
+    // // }
 
-    IEnumerator updateObject()
-    {
-        yield return new WaitForSeconds(0.01f);
-        electricObject.isOn = true;
-    }
+    // public void addSourceElement(ElectricBehaviour electricBehaviour)
+    // {
+    //     sourceElements.Add(electricBehaviour);
+    // }
 
-    private void deactivateObject(Collider2D other)
-    {
-        List<ElectricBehaviour> sourceElementsTemporal = this.sourceElements;
+    // public void addInactiveElement(ElectricBehaviour electricBehaviour)
+    // {
+    //     if (!electricBehaviour.isOn)
+    //     {
+    //         inactiveElements.Add(electricBehaviour);
+    //     }
+    // }
 
-        if (other.gameObject.layer == layer)
-        {
-            sourceElementsTemporal.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
+    // public void activateObject(GameObject other)
+    // {
+    //     ElectricBehaviour electricOther = other.transform.parent.GetComponent<ElectricBehaviour>();
 
-            if (sourceElementsTemporal.Count == 0 && !electricObject.alwaysOn)
-            {
-                electricObject.isOn = false;
-            }
+    //     if (electricOther.isOn)
+    //     {
+    //         // if(electricOther.isOn)
+    //         // {
+    //         addSourceElement(electricOther);
+    //         // }
+    //         StartCoroutine(updateObject());
+    //     }
+    //     else
+    //     {
+    //         addInactiveElement(electricOther);
+    //     }
 
-            this.sourceElements = sourceElementsTemporal;
-        }
-    }
+    // }
 
-    private void handleStay(Collider2D other)
-    {
+    // public void activateInactive(GameObject other)
+    // {
+    //     ElectricBehaviour electricOther = other.transform.parent.GetComponent<ElectricBehaviour>();
+    //     addSourceElement(electricOther);
+    //     electricObject.isOn = true;
+    // }
 
-    }
+    // IEnumerator updateObject()
+    // {
+    //     yield return new WaitForSeconds(0.01f);
+    //     electricObject.isOn = true;
+
+    //     foreach(ElectricBehaviour element in inactiveElements)
+    //     {
+    //         Debug.Log(sourceElements.Count);
+    //         element.gameObject.GetComponentInChildren<ElectricFieldBehaviour>().activateInactive(this.gameObject);
+    //         Debug.Log(sourceElements.Count);
+    //         // inactiveElements.RemoveAll(isElement);
+            
+    //     }
+    //     inactiveElements.Clear();
+    // }
+
+    // private static bool isElement(ElectricBehaviour element)
+    // {
+    //     return true;
+    // }
+
+    // private void deactivateObject(Collider2D other)
+    // {
+    //     List<ElectricBehaviour> sourceElementsTemporal = this.sourceElements;
+
+    //     if (other.gameObject.layer == layer)
+    //     {
+    //         sourceElementsTemporal.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
+    //         inactiveElements.Remove(other.gameObject.transform.parent.GetComponent<ElectricBehaviour>());
+
+    //         this.sourceElements = sourceElementsTemporal;
+    //     }
+    // }
 }
