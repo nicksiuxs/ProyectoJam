@@ -6,14 +6,14 @@ public class PickUp : MonoBehaviour
 {
     private Rigidbody2D itemRigidBody;
     public Rigidbody2D playerRigidBody;
-
-    public float throwForce = 0;
+    private string tagObject;
     bool hasPlayer = false;
     bool beingCarried = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         itemRigidBody = other.GetComponent<Rigidbody2D>();
+        tagObject = other.gameObject.tag;
         hasPlayer = true;
     }
 
@@ -37,7 +37,7 @@ public class PickUp : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0) && hasPlayer)
+            if (Input.GetMouseButtonDown(0) && hasPlayer && tagObject.CompareTo("Node") == 0)
             {
                 itemRigidBody.isKinematic = true;
                 itemRigidBody.transform.parent = playerRigidBody.transform;
