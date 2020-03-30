@@ -15,11 +15,13 @@ public abstract class ElectricBehaviour : MonoBehaviour
     public LineRenderer lineRenderer;
     public float lineWidth;
     public int vertexCount;
+    public ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
     {
         setUp();
+        modifyParticlesRange();
         toStart();
     }
 
@@ -38,6 +40,14 @@ public abstract class ElectricBehaviour : MonoBehaviour
     public void setUp()
     {
         circleCollider.radius = electricFieldRange;
+    }
+
+    private void modifyParticlesRange()
+    {
+        var mainParticles = particles.main;
+        Vector3 desiredDistance = new Vector3(this.transform.position.x + electricFieldRange, this.transform.position.y, this.transform.position.z);
+        float startSpeed = mainParticles.startSpeedMultiplier;
+        mainParticles.startLifetime = Vector3.Distance(this.transform.position, desiredDistance)/startSpeed;
     }
 
     private void SetupCircle()
@@ -76,6 +86,16 @@ public abstract class ElectricBehaviour : MonoBehaviour
 
             theta += deltaTheta;
         }
+    }
+
+    public void activateParticleSystem()
+    {
+        particles.Play();
+    }
+
+    public void deactivateParticleSystem()
+    {
+        particles.Stop();
     }
 
     public abstract void toStart();

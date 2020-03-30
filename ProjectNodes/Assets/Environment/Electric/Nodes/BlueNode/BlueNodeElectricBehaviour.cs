@@ -28,11 +28,14 @@ public class BlueNodeElectricBehaviour : ElectricBehaviour
         List<ElectricBehaviour> electricElements = new List<ElectricBehaviour>();
         electricElements.Add(this);
 
+        base.activateParticleSystem();
+
         return electricElements;
     }
 
     public override void handleDeactivate()
     {
         base.isOn = false;
+        base.deactivateParticleSystem();
     }
 }
