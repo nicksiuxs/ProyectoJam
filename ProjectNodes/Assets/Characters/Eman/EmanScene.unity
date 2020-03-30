@@ -217,8 +217,8 @@ GameObject:
   - component: {fileID: 602252335}
   - component: {fileID: 602252338}
   m_Layer: 8
-  m_Name: New Sprite
-  m_TagString: Untagged
+  m_Name: Node
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,12 +324,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!95 &1438932831 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5334841153154350291, guid: 223c06f352e0b5449834e3cd0b577c79,
-    type: 3}
-  m_PrefabInstance: {fileID: 5334841151883191180}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1444594878
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,35 +492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5334841153154350289, guid: 223c06f352e0b5449834e3cd0b577c79,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334841153154350289, guid: 223c06f352e0b5449834e3cd0b577c79,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334841153154350290, guid: 223c06f352e0b5449834e3cd0b577c79,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334841153154350290, guid: 223c06f352e0b5449834e3cd0b577c79,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5334841153154350294, guid: 223c06f352e0b5449834e3cd0b577c79,
         type: 3}
       propertyPath: m_Name
       value: EmanPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5334841153154350295, guid: 223c06f352e0b5449834e3cd0b577c79,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1438932831}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223c06f352e0b5449834e3cd0b577c79, type: 3}
