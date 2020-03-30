@@ -7,6 +7,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.6646104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.6345282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.03965142
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.98633057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.r
+      value: 0.15321356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.g
+      value: 0.6740741
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.b
+      value: 0.7676194
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071689111320335309, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2959334733283734585, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
       propertyPath: m_Name
@@ -15,12 +65,12 @@ PrefabInstance:
     - target: {fileID: 3281149727954947036, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.53
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 3281149727954947036, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3281149727954947036, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
@@ -67,11 +117,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5484653787711663293, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077125970560768627, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599841050830770983, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
       propertyPath: otherPurpleNode
       value: 
-      objectReference: {fileID: 6599841050830770983, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599841050830770983, guid: 1707df30b1eab1548a8a8fe3d184ce88,
         type: 3}
+      propertyPath: lineWidth
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599841050830770983, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+        type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 4170643582237058969}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1707df30b1eab1548a8a8fe3d184ce88, type: 3}
+--- !u!198 &4170643582237058969 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1770673237842451389, guid: 1707df30b1eab1548a8a8fe3d184ce88,
+    type: 3}
+  m_PrefabInstance: {fileID: 2410459135933119524}
+  m_PrefabAsset: {fileID: 0}

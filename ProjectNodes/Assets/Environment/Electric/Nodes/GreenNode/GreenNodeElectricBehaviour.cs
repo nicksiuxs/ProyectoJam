@@ -20,7 +20,7 @@ public class GreenNodeElectricBehaviour : ElectricBehaviour
 
     public override void toUpdate()
     {
-        checkIfCharging();
+        // checkIfCharging();
 
         if(isCharging)
         {
@@ -72,6 +72,8 @@ public class GreenNodeElectricBehaviour : ElectricBehaviour
 
         isCharging = true;
 
+        base.activateParticleSystem();
+
         return electricElements;
     }
 
@@ -87,6 +89,7 @@ public class GreenNodeElectricBehaviour : ElectricBehaviour
             base.alwaysOn = false;   
         }
         isCharging = false;
+        base.deactivateParticleSystem();
     }
 
     private void checkIfCharging()

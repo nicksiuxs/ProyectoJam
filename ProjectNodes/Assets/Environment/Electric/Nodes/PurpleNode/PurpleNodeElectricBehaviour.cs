@@ -42,7 +42,11 @@ public class PurpleNodeElectricBehaviour : ElectricBehaviour
         {
             otherPurpleNode.isOn = true;
             electricElements.Add(otherPurpleNode);
+
+            otherPurpleNode.activateParticleSystem();
         }
+
+        base.activateParticleSystem();
 
         return electricElements;
     }
@@ -50,5 +54,6 @@ public class PurpleNodeElectricBehaviour : ElectricBehaviour
     public override void handleDeactivate()
     {
         base.isOn = false;
+        base.deactivateParticleSystem();
     }
 }
