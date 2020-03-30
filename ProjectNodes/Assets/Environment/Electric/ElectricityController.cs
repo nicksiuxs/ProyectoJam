@@ -61,19 +61,15 @@ public class ElectricityController : MonoBehaviour
         List<ElectricBehaviour> checkingListTemporal = new List<ElectricBehaviour>();
         foreach (ElectricBehaviour element in checkingList)
         {
-            Debug.Log("checking: " + element.name);
-            Collider2D[] collidedElements = Physics2D.OverlapCircleAll(element.gameObject.transform.position, element.electricFieldRange, electricLayer);
+            Collider2D[] collidedElements = element.getCollidedElements();
 
             foreach (Collider2D collider in collidedElements)
             {
-                Debug.Log(collider.name);
                 ElectricBehaviour electricBehaviour = collider.gameObject.GetComponent<ElectricBehaviour>();
                 if (toCheckList.Exists(e => e == electricBehaviour))
                 {
-                    checkingListTemporal.Add(electricBehaviour);
-                    toCheckList.Remove(electricBehaviour);
+                    checkingListTemporal = handleElementsToLists(checkingListTemporal, electricBehaviour);
                 }
-                electricBehaviour.isOn = true;
             }
         }
 
@@ -86,12 +82,23 @@ public class ElectricityController : MonoBehaviour
         {
             foreach (ElectricBehaviour electricBehaviour in toCheckList)
             {
-                electricBehaviour.isOn = false;
+                electricBehaviour.handleDeactivate();
             }
 
-            toCheckList = new List<ElectricBehaviour>(nodesList);
-
-            checkingList = new List<ElectricBehaviour>(sourceList);
+            setUp();
         }
+    }
+
+    private List<ElectricBehaviour> handleElementsToLists(List<ElectricBehaviour> checkingListTemporal, ElectricBehaviour electricBehaviour)
+    {
+        List<ElectricBehaviour> relatedElements = electricBehaviour.handleActivate();
+
+        foreach (ElectricBehaviour relatedElement in relatedElements)
+        {
+            checkingListTemporal.Add(relatedElement);
+            toCheckList.Remove(relatedElement);
+        }
+
+        return checkingListTemporal;
     }
 }
