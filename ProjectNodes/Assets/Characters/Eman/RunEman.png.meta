@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: b188f89755d76ed4bbba553629bde725
+guid: 7ee1f27596aa14c4b9acfcccaed05686
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3542524308744967734
-    second: Eman_0
+      213: 4370115997233561431
+    second: RunEman_0
   - first:
-      213: -8779471681270187115
-    second: Eman_1
+      213: 3261723428867931937
+    second: RunEman_1
   - first:
-      213: 5716645079050505279
-    second: Eman_2
+      213: -1438363448189674043
+    second: RunEman_2
   - first:
-      213: -2242974267580323008
-    second: Eman_3
+      213: -4569833631757753965
+    second: RunEman_3
   - first:
-      213: -1579331940414367044
-    second: Eman_4
+      213: 1788812319808791079
+    second: RunEman_4
   - first:
-      213: 316792988789549936
-    second: Eman_5
+      213: 106689785578329629
+    second: RunEman_5
+  - first:
+      213: 6805119943252291155
+    second: RunEman_6
+  - first:
+      213: 748635850783934154
+    second: RunEman_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +111,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eman_0
+      name: RunEman_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fbb5a7855c5ac30800000000000000
+      internalID: 4370115997233561431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunEman_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ffd3d5d28f34d20800000000000000
+      internalID: 3261723428867931937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunEman_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd9fbc8018e90ce0800000000000000
+      internalID: -1438363448189674043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunEman_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39122702680b490c0800000000000000
+      internalID: -4569833631757753965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunEman_4
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac9e11909ec66dec0800000000000000
-      internalID: -3542524308744967734
+      spriteID: 722ab0cc35323d810800000000000000
+      internalID: 1788812319808791079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eman_1
+      name: RunEman_5
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59bf942850d092680800000000000000
-      internalID: -8779471681270187115
+      spriteID: d161f827bc90b7100800000000000000
+      internalID: 106689785578329629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eman_2
+      name: RunEman_6
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c4acb496a955f40800000000000000
-      internalID: 5716645079050505279
+      spriteID: 35eaa778884a07e50800000000000000
+      internalID: 6805119943252291155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eman_3
+      name: RunEman_7
       rect:
         serializedVersion: 2
         x: 96
@@ -182,50 +272,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04b688499ca5fd0e0800000000000000
-      internalID: -2242974267580323008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eman_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cba5c25c7f5151ae0800000000000000
-      internalID: -1579331940414367044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eman_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07ba22c7b89756400800000000000000
-      internalID: 316792988789549936
+      spriteID: ac649100750b36a00800000000000000
+      internalID: 748635850783934154
       vertices: []
       indices: 
       edges: []
