@@ -6,12 +6,16 @@ public class PickUp : MonoBehaviour
 {
     private Rigidbody2D rigidbodyOther;
     public Rigidbody2D playerRigidBody;
-    public string tagObject;
+    public string objectTag;
     private bool hasObject = false;
+
+    public Animator animator;
+
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == tagObject && !hasObject && Input.GetMouseButtonDown(0))
+        if (other.gameObject.tag == objectTag && !hasObject && Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("IsGrab",true);
             rigidbodyOther = other.GetComponent<Rigidbody2D>();
             rigidbodyOther.isKinematic = true;
             rigidbodyOther.transform.parent = playerRigidBody.transform;
@@ -28,7 +32,7 @@ public class PickUp : MonoBehaviour
             rigidbodyOther.transform.parent = null;
             transform.position = playerRigidBody.transform.position;
             rigidbodyOther.velocity = Vector2.zero;
-
+             animator.SetBool("IsGrab",false);
             StartCoroutine(updateState(false));
         }
     }
