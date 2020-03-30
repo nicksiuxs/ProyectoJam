@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8f7613ed0975d264aaf7c1fc7f3a6e6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,16 +101,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12848946, y: 0.12848946}
+  m_Size: {x: 0.3, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &6609563048426807060
 Rigidbody2D:
@@ -268,6 +268,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 6072476982627285623}
   lineWidth: 0.2
   vertexCount: 50
+  particles: {fileID: 0}
   otherPurpleNode: {fileID: 4865927061234899189, guid: cc18e6bc0971f424bac81a3cb60a573c,
     type: 3}
   maxRangeConnection: 3.83
