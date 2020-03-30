@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class ElectricBehaviour : MonoBehaviour
+public abstract class ElectricBehaviour : MonoBehaviour
 {
     public bool isOn;
     public bool alwaysOn;
@@ -13,13 +13,14 @@ public class ElectricBehaviour : MonoBehaviour
 
     [Header("Range Circle")]
     public LineRenderer lineRenderer;
-    public float lineWidth = 0.2f;
-    public int vertexCount = 50;
+    public float lineWidth;
+    public int vertexCount;
 
     // Start is called before the first frame update
     void Start()
     {
         setUp();
+        toStart();
     }
 
     void OnValidate()
@@ -30,6 +31,8 @@ public class ElectricBehaviour : MonoBehaviour
     void Update()
     {
         SetupCircle();
+        Debug.Log("sirve");
+        toUpdate();
     }
 
     public void setUp()
@@ -56,6 +59,7 @@ public class ElectricBehaviour : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        toOnDrawGizmos();
         Gizmos.DrawWireSphere(gameObject.transform.position, electricFieldRange);
 
         float radius = electricFieldRange - (lineWidth / 2f);
@@ -73,4 +77,12 @@ public class ElectricBehaviour : MonoBehaviour
             theta += deltaTheta;
         }
     }
+
+    public abstract void toStart();
+    public abstract void toUpdate();
+    public abstract void toOnDrawGizmos();
+
+    public abstract Collider2D[] getCollidedElements();
+    public abstract List<ElectricBehaviour> handleActivate();
+    public abstract void handleDeactivate();
 }
