@@ -61,14 +61,13 @@ public class ElectricityController : MonoBehaviour
         List<ElectricBehaviour> checkingListTemporal = new List<ElectricBehaviour>();
         foreach (ElectricBehaviour element in checkingList)
         {
-            Collider2D[] collidedElements = element.getCollidedElements();
+            List<ElectricBehaviour> collidedElements = element.getCollidedElements();
 
-            foreach (Collider2D collider in collidedElements)
+            foreach (ElectricBehaviour electricObject in collidedElements)
             {
-                ElectricBehaviour electricBehaviour = collider.gameObject.GetComponent<ElectricBehaviour>();
-                if (toCheckList.Exists(e => e == electricBehaviour))
+                if (toCheckList.Exists(e => e == electricObject))
                 {
-                    checkingListTemporal = handleElementsToLists(checkingListTemporal, electricBehaviour);
+                    checkingListTemporal = handleElementsToLists(checkingListTemporal, electricObject);
                 }
             }
         }
