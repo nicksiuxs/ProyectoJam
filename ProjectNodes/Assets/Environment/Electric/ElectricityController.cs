@@ -61,7 +61,7 @@ public class ElectricityController : MonoBehaviour
         List<ElectricBehaviour> checkingListTemporal = new List<ElectricBehaviour>();
         foreach (ElectricBehaviour element in checkingList)
         {
-            Collider2D[] collidedElements = element.getCollidedElements();
+            List<Collider2D> collidedElements = element.getCollidedElements();
 
             foreach (Collider2D collider in collidedElements)
             {

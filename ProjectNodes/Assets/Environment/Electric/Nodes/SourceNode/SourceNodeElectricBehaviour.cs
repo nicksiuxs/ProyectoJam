@@ -17,9 +17,9 @@ public class SourceNodeElectricBehaviour : ElectricBehaviour
     {
     }
 
-    public override Collider2D[] getCollidedElements()
+    public override List<Collider2D> getCollidedElements()
     {
-        return Physics2D.OverlapCircleAll(base.transform.position, base.electricFieldRange, base.electricLayer);
+        return base.electricFieldController.getCollidedElements();
     }
 
     public override List<ElectricBehaviour> handleActivate()
