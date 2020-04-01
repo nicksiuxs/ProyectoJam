@@ -7,9 +7,6 @@ public abstract class ElectricBehaviour : MonoBehaviour
 {
     public bool isOn;
     public bool alwaysOn;
-    public float electricFieldRange;
-    public LayerMask electricLayer;
-    public CircleCollider2D circleCollider;
 
     [Header("Range Circle")]
     public ElectricFieldController electricFieldController;
@@ -17,13 +14,7 @@ public abstract class ElectricBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setUp();
         toStart();
-    }
-
-    void OnValidate()
-    {
-        setUp();
     }
 
     void Update()
@@ -35,11 +26,6 @@ public abstract class ElectricBehaviour : MonoBehaviour
     void OnDrawGizmos()
     {
         toOnDrawGizmos();
-    }
-
-    public void setUp()
-    {
-        circleCollider.radius = electricFieldRange;
     }
 
     public void activateParticleSystem()
@@ -56,7 +42,7 @@ public abstract class ElectricBehaviour : MonoBehaviour
     public abstract void toUpdate();
     public abstract void toOnDrawGizmos();
 
-    public abstract List<Collider2D> getCollidedElements();
+    public abstract List<ElectricBehaviour> getCollidedElements();
     public abstract List<ElectricBehaviour> handleActivate();
     public abstract void handleDeactivate();
 }

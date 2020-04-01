@@ -17,9 +17,17 @@ public class BlueNodeElectricBehaviour : ElectricBehaviour
     {
     }
 
-    public override List<Collider2D> getCollidedElements()
+    public override List<ElectricBehaviour> getCollidedElements()
     {
-        return base.electricFieldController.getCollidedElements();
+        List<ElectricBehaviour> electricBehaviourList = new List<ElectricBehaviour>();
+        List<Collider2D> colliders = base.electricFieldController.getCollidedElements();
+
+        foreach(Collider2D collider in colliders)
+        {
+            electricBehaviourList.Add(collider.GetComponentInParent<ElectricBehaviour>());
+        }
+
+        return electricBehaviourList;
     }
 
     public override List<ElectricBehaviour> handleActivate()

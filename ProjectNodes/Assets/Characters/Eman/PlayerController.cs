@@ -41,8 +41,6 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        Physics2D.IgnoreLayerCollision(0,8);
-
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
     }
 

@@ -59,9 +59,17 @@ public class GreenNodeElectricBehaviour : ElectricBehaviour
     {
     }
 
-    public override List<Collider2D> getCollidedElements()
+    public override List<ElectricBehaviour> getCollidedElements()
     {
-        return base.electricFieldController.getCollidedElements();
+        List<ElectricBehaviour> electricBehaviourList = new List<ElectricBehaviour>();
+        List<Collider2D> colliders = base.electricFieldController.getCollidedElements();
+
+        foreach(Collider2D collider in colliders)
+        {
+            electricBehaviourList.Add(collider.GetComponentInParent<ElectricBehaviour>());
+        }
+
+        return electricBehaviourList;
     }
 
     public override List<ElectricBehaviour> handleActivate()
@@ -94,19 +102,5 @@ public class GreenNodeElectricBehaviour : ElectricBehaviour
 
     private void checkIfCharging()
     {
-        List<Collider2D> electricElements = Physics2D.OverlapCircleAll(base.transform.position, base.electricFieldRange, base.electricLayer).ToList();
-
-        Debug.Log(electricElements.ToList().Exists(e => e.gameObject.GetComponent<ElectricBehaviour>().isOn));
-
-        if(electricElements.Exists(e => e.GetComponent<ElectricBehaviour>().isOn && e.GetComponent<ElectricBehaviour>() != this))
-        {
-            Debug.Log("++++++++++++");
-            isCharging = true;
-        }
-        else
-        {
-            Debug.Log("-------------");
-            isCharging = false;
-        }
     }
 }
