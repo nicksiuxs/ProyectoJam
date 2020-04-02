@@ -22,14 +22,22 @@ public class PurpleNodeElectricBehaviour : ElectricBehaviour
         Gizmos.DrawWireSphere(gameObject.transform.position, maxRangeConnection);
     }
 
-    public override Collider2D[] getCollidedElements()
+    public override List<ElectricBehaviour> getCollidedElements()
     {
-        Collider2D[] colliders2D = Physics2D.OverlapCircleAll(base.transform.position, base.electricFieldRange, base.electricLayer);
+        List<Collider2D> colliders = base.electricFieldController.getCollidedElements();
         if(Vector3.Distance(transform.position, otherPurpleNode.transform.position) <= (maxRangeConnection + otherPurpleNode.maxRangeConnection))
         {
-            colliders2D = colliders2D.Concat(Physics2D.OverlapCircleAll(otherPurpleNode.transform.position, otherPurpleNode.electricFieldRange, otherPurpleNode.electricLayer)).ToArray();
+            colliders = colliders.Concat(otherPurpleNode.electricFieldController.getCollidedElements()).ToList();
         }
-        return colliders2D;
+        
+        List<ElectricBehaviour> electricBehaviourList = new List<ElectricBehaviour>();
+
+        foreach(Collider2D collider in colliders)
+        {
+            electricBehaviourList.Add(collider.GetComponentInParent<ElectricBehaviour>());
+        }
+
+        return electricBehaviourList;
     }
 
     public override List<ElectricBehaviour> handleActivate()

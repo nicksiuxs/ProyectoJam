@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5334841151780995363}
   - component: {fileID: 5334841151780995389}
   - component: {fileID: 5334841151780995388}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: InteractionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 5334841152053602850}
   - component: {fileID: 5334841152053602876}
   - component: {fileID: 5334841152053602851}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TriggerIsGrounded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 5334841153154350288}
   - component: {fileID: 5334841153154350295}
   - component: {fileID: 5334841153154350291}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EmanPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
