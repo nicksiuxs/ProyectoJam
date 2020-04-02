@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private Rigidbody2D rigidbodyOther;
-    public Rigidbody2D playerRigidBody;
+
+    public Animator animator;
     public string objectTag;
+    public Transform grabPosition;
+    public Rigidbody2D playerRigidBody;
+    
+    private Rigidbody2D rigidbodyOther;
     private bool hasObject = false;
     private bool grabFlag = false;
     private Transform otherParent;
 
-    public Animator animator;
+
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -22,6 +26,7 @@ public class PickUp : MonoBehaviour
             otherParent = rigidbodyOther.transform.parent;
             rigidbodyOther.isKinematic = true;
             rigidbodyOther.transform.parent = playerRigidBody.transform;
+            rigidbodyOther.transform.position = grabPosition.position;
 
             hasObject = true;
             grabFlag = true;
