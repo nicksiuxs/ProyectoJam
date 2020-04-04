@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8088170984456767914}
   - component: {fileID: 1164184589}
   - component: {fileID: 1164184588}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DoorPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 310547635
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2667674162544056742, guid: 0352d4d644aa38748a8e63038964081a,
     type: 3}

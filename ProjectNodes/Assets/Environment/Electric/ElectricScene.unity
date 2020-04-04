@@ -875,10 +875,6 @@ PrefabInstance:
       propertyPath: receiverNodes.Array.data[0]
       value: 
       objectReference: {fileID: 1141753724}
-    - target: {fileID: 1164184588, guid: 9eb682ad4f10f614b885cf2f168a5620, type: 3}
-      propertyPath: receiverNodes.Array.data[1]
-      value: 
-      objectReference: {fileID: 890084493}
     - target: {fileID: 1075643660148641567, guid: 9eb682ad4f10f614b885cf2f168a5620,
         type: 3}
       propertyPath: m_LocalPosition.x
