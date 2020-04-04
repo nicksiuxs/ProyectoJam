@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
 public abstract class ElectricBehaviour : MonoBehaviour
 {
     public bool isOn;
