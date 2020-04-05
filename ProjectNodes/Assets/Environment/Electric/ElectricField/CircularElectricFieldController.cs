@@ -71,7 +71,7 @@ public class CircularElectricFieldController : ElectricFieldController
         float deltaTheta = (2f * Mathf.PI) / vertexCount;
         float theta = 0f;
 
-        Vector3 oldPos = Vector3.zero;
+        Vector3 oldPos = transform.position;
         for (int i = 0; i < vertexCount + 1; i++)
         {
             Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * Mathf.Sin(theta), 0f);
