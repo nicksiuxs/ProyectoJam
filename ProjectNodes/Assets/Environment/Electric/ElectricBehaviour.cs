@@ -7,7 +7,7 @@ public abstract class ElectricBehaviour : MonoBehaviour
     public bool isOn;
     public bool alwaysOn;
 
-    [Header("Range Circle")]
+    [Header("Electric Field")]
     public ElectricFieldController electricFieldController;
 
     // Start is called before the first frame update

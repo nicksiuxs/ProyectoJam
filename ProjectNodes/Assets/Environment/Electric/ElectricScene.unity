@@ -937,6 +937,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb682ad4f10f614b885cf2f168a5620, type: 3}
+--- !u!1001 &2947750570860441545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091377024612149263, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998620544634406026, guid: 5047a7b67722ef240bfcf13ea355e6d5,
+        type: 3}
+      propertyPath: m_Name
+      value: MetallicBarPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5047a7b67722ef240bfcf13ea355e6d5, type: 3}
 --- !u!1001 &3142709668524049901
 PrefabInstance:
   m_ObjectHideFlags: 0
