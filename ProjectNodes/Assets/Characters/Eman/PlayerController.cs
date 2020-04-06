@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Vector3 m_velocity = Vector3.zero;
 
-    public Animator animator; 
+    public Animator animator;
 
     float horizontalMove = 0f;
     public float runSpeed = 40f;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private bool isGrounded = false;
     private bool isFacingRight = true;
+    private bool isSlowDown = false;
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -26,11 +27,23 @@ public class PlayerController : MonoBehaviour
         float inputMovement = Input.GetAxisRaw("Horizontal");
         horizontalMove = inputMovement * runSpeed;
 
-        if(inputMovement > 0 && !isFacingRight)
+        if (Input.GetButton("SlowDown"))
+        {
+            isSlowDown = true;
+            runSpeed = 10f;
+        }
+
+        if (!Input.GetButton("SlowDown"))
+        {
+            isSlowDown = false;
+            runSpeed = 20f;
+        }
+
+        if (inputMovement > 0 && !isFacingRight && !isSlowDown)
         {
             flip();
         }
-        else if(inputMovement < 0 && isFacingRight)
+        else if (inputMovement < 0 && isFacingRight && !isSlowDown)
         {
             flip();
         }
@@ -38,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rigidBody.AddForce(new Vector2(0f, jumpForce));
-            
+
         }
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -67,7 +80,7 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
 
         Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }
