@@ -9,7 +9,7 @@ public class PickUp : MonoBehaviour
     public string objectTag;
     public Transform grabPosition;
     public Rigidbody2D playerRigidBody;
-    
+
     private Rigidbody2D rigidbodyOther;
     private bool hasObject = false;
     private bool grabFlag = false;
@@ -19,7 +19,7 @@ public class PickUp : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == objectTag && !hasObject && Input.GetMouseButtonDown(0))
+        if (other.gameObject.tag == objectTag && !hasObject && Input.GetButtonDown("Grab"))
         {
 
             rigidbodyOther = other.GetComponent<Rigidbody2D>();
@@ -37,17 +37,16 @@ public class PickUp : MonoBehaviour
 
     void Update()
     {
-        if (hasObject && Input.GetMouseButtonDown(0) && !grabFlag)
+        if (hasObject && Input.GetButtonDown("Grab") && !grabFlag)
         {
             rigidbodyOther.isKinematic = false;
 
             rigidbodyOther.transform.parent = (otherParent == null ? null : otherParent);
-            transform.position = playerRigidBody.transform.position;
             rigidbodyOther.velocity = Vector2.zero;
             animator.SetBool("IsGrab", false);
             hasObject = false;
         }
-        else if (!Input.GetMouseButtonDown(0))
+        else if (!Input.GetButtonDown("Grab"))
         {
             grabFlag = false;
         }
