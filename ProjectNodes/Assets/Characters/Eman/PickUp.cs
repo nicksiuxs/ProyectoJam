@@ -42,7 +42,6 @@ public class PickUp : MonoBehaviour
             rigidbodyOther.isKinematic = false;
 
             rigidbodyOther.transform.parent = (otherParent == null ? null : otherParent);
-            transform.position = playerRigidBody.transform.position;
             rigidbodyOther.velocity = Vector2.zero;
             animator.SetBool("IsGrab", false);
             hasObject = false;
