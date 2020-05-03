@@ -18,7 +18,6 @@ public abstract class ElectricBehaviour : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("sirve");
         toUpdate();
     }
 
