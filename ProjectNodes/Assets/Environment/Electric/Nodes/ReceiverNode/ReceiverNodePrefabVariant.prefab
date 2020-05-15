@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 287948672308070053, guid: 7ad28762eda5f41429dc3b4138fd7483,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 287948672308070053, guid: 7ad28762eda5f41429dc3b4138fd7483,
         type: 3}
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 533580636862167360, guid: 7ad28762eda5f41429dc3b4138fd7483,
         type: 3}
       propertyPath: m_Name
-      value: ReceiverNodePrefab
+      value: ReceiverNodePrefabVariant
       objectReference: {fileID: 0}
     - target: {fileID: 533580636862167360, guid: 7ad28762eda5f41429dc3b4138fd7483,
         type: 3}
@@ -96,6 +96,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878092245577796700, guid: 7ad28762eda5f41429dc3b4138fd7483,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878092245577796700, guid: 7ad28762eda5f41429dc3b4138fd7483,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8753146223224767137, guid: 7ad28762eda5f41429dc3b4138fd7483,
         type: 3}
